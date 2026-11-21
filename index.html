@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>App del Clima</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>App del Clima</h1>
+    <p class="sub">Ingrese una ubicación y presione buscar</p>
+
+    <form id="form" class="row">
+      <label class="sr-only" for="location">Ubicación</label>
+      <input type="text" id="location" placeholder="Ej: Bogotá, Colombia" autocomplete="off" required>
+      <button type="submit" class="primary">Buscar</button>
+      <button type="button" id="refresh" disabled>Actualizar</button>
+      <button type="button" id="geo">Mi ubicación</button>
+    </form>
+
+    <p id="status" class="status" aria-live="polite"></p>
+    <div id="loader" class="loader" hidden aria-hidden="true"></div>
+
+    <section id="weather" hidden>
+      <h2 id="place"></h2>
+      <div class="current">
+        <div class="icon" id="cIcon" aria-hidden="true"></div>
+        <div>
+          <div class="temp" id="cTemp"></div>
+          <div id="cCond"></div>
+        </div>
+        <ul class="stats">
+          <li>Viento: <strong id="cWind"></strong></li>
+          <li>Prob. de lluvia: <strong id="cRain"></strong></li>
+        </ul>
+      </div>
+      <p id="updated" class="sub"></p>
+
+      <div class="columns">
+        <div>
+          <h3>Últimas 24 horas</h3>
+          <div class="scroll"><table id="past"></table></div>
+        </div>
+        <div>
+          <h3>Próximas 24 horas</h3>
+          <div class="scroll"><table id="future"></table></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="js/scrip.js"></script>
+</body>
+</html>
